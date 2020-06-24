@@ -14,8 +14,8 @@ def main():
         lines_number = 0
         with open(file_name) as input_data:
             for line in input_data:
-                X_phrases.append(line.split('\t')[0])
-                y_phrases.append(line.split('\t')[1].replace('\n', ''))
+                X_phrases.append(line.split('\t')[0] + '.')
+                y_phrases.append(line.split('\t')[1].replace('\n', '.'))
                 lines_number += 1
                 if how_many != -1 and lines_number > how_many:
                     return lines_number
