@@ -1,4 +1,3 @@
-import numpy as np
 from sklearn.model_selection import train_test_split
 
 input_data_filename = 'result_not_same.tsv'
@@ -30,9 +29,9 @@ def main():
     X_test, X_valid, y_test, y_valid = train_test_split(X_test_valid, y_test_valid, test_size=0.5)
     output_list = [X_train, y_train, X_test, y_test, X_valid, y_valid]
     print(len(X_train), len(y_train), len(X_test), len(y_test), len(X_valid), len(y_valid))
-    output_files = ['lemmatization/train/train.after', 'lemmatization/train/train.before',
-                    'lemmatization/test/test.after', 'lemmatization/test/test.before',
-                    'lemmatization/valid/valid.after', 'lemmatization/valid/valid.before']
+    output_files = ['train.after', 'train.before',
+                    'test.after', 'test.before',
+                    'valid.after', 'valid.before']
     for output_file, output in zip(output_files, output_list):
         with open(output_file, 'w') as file:
             file.write('\n'.join(output))
